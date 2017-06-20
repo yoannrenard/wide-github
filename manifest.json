@@ -1,0 +1,28 @@
+{
+
+  "manifest_version": 2,
+  "name": "Wide Github",
+  "version": "2.0.0",
+  "author": "Yoann Renard",
+  "developer": {
+    "name": "Yoann Renard",
+    "url": "yoannrenard.fr"
+  },
+  "description": "Use Github on fullscreen for your code review",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.github.com/*/compare/*",
+        "*://*.github.com/*/commit/*",
+        "*://*.github.com/*/pull/[0-9]*/files",
+        "*://*.github.com/*/blob/*"
+      ],
+      "js": ["main.js"]
+    }
+  ]
+
+}
