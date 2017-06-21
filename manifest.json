@@ -23,6 +23,13 @@
       ],
       "js": ["main.js"]
     }
-  ]
+  ],
 
+  "permissions": [
+    "webRequest",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  }
 }

@@ -1,0 +1,7 @@
+.container {
+    width: calc(100% - 15px);
+}
+
+.repository-with-sidebar .repository-with-sidebar {
+    width: calc(100% - 45px);
+}
