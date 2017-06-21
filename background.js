@@ -1,3 +1,6 @@
+Cu.import("resource://gre/modules/MatchPattern.jsm");
+Cu.import("resource://gre/modules/BrowserUtils.jsm");
+
 /*! onloadCSS. (onload callback for loadCSS) [c]2017 Filament Group, Inc. MIT License */
 /* global navigator */
 /* exported onloadCSS */
@@ -135,7 +138,11 @@ function logURL(requestDetails) {
     // para.appendChild(node);
     // document.getElementsByTagName("head")[0].appendChild(para);
     console.log("STYLE");
-    var stylesheet = loadCSS( "main.css" );
+
+    // We need to exclude https://github.com/yoannrenard/wide-github/blob/v2/main.css
+    // https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Match_patterns#Testing_match_patterns
+
+    var stylesheet = loadCSS( "https://github.com/yoannrenard/wide-github/blob/v2/main.css" );
     onloadCSS( stylesheet, function() {
         console.log( "Stylesheet has loaded." );
     });
